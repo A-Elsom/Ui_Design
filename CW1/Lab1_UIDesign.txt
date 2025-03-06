@@ -1,0 +1,55 @@
+Task 1
+Edinburgh
+
+Advanced Features
+- Booking system for attractions and accommodation
+- Map with clickable markers on specific locations, with redirection to information page
+- booking system for public transport
+
+Task2
+
+Website One - https://edinburghtips.com/attractions-sightseeing.html(accessed Jan. 14, 2025)
+This website provides a list of 20 attractions in Edinburgh along with an image and short description of the attraction. It also provides links to pages with more images and details on the location, along with links to booking websites. However, the links on the initial page are not very obvious; being just simple orange hyperlinks. Moreover, there is not information on public transport to the location or parking for private transport and you cannot book tickets directly through the website.
+
+Website Two - https://edinburgh.org/things-to-do/(accessed Jan. 14, 2025)
+
+This website is very refined with a simple yet informative index page, with links to different categories of things to do; e.g. castles and historical places, shopping, Arts and Culture. It also provides a list of close amenities to the attraction and maps to the location. The only negatives are that the website does not offer many images of the attraction and you cannot book directly through the website.
+
+
+Features 
+
+- Images of locations
+- Description of the location
+- Clear and simple index page linking to different categories of things to do, accommodation, etc
+- opening times of each location
+
+Advanced Features
+
+- ability to book the event through the website
+- Being able to view nearby places and filter them by type e.g. Food, Accommodation, Transport
+
+Task 3
+
+Features of my website
+
+Basic
+
+- login/sign up page
+- Images of locations
+- Description of the location
+- Clear and simple index page linking to different categories of things to do, accommodation, etc
+- opening times of each location
+- calendar
+- reminders
+- list functionality
+
+Advanced
+
+- ability to book the event through the website
+- Being able to view nearby places and filter them by type e.g. Food, Accommodation, Transport
+- Booking system for attractions and accommodation
+- Map with clickable markers on specific locations, with redirection to information page
+- booking system for public transport
+
+Task 4
+
