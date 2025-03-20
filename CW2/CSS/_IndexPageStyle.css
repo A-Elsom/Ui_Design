@@ -1,0 +1,84 @@
+body {
+    background-color: darkgray;
+    background-image: url("../Images/City_Background.jpeg");
+    background-size: cover;
+    align-content: center;
+    display: grid;
+    
+}
+
+@keyframes underlineNavAnimation {
+    from {text-decoration-color: rgba(255, 255, 255, 0);}
+    to {text-decoration-color: rgba(255, 255, 255, 1);}
+}
+
+nav {
+    background-color: rgba(0, 0, 0,0.5);
+    font-family: serif;
+    border-radius: 5px;
+}
+
+.container{
+    display:grid;
+    align-content: center;
+    justify-content: center;
+    width: 60%;
+    margin: 40px;
+    background-color: rgba(95, 92, 92, 0.75);
+    padding: 40px;
+    justify-self: center;
+    border-radius: 5px;
+}
+
+.options {
+    display: flex;
+    padding: 20px;
+}
+
+.options #Art, #History, #Food{
+    padding-left: 40px;
+    padding-right: 40px;
+    
+}
+
+.options img {
+    box-shadow: 5px 5px 5px;
+    border-radius: 3px;
+}
+
+#navigation{
+    display:flex;
+    font-family: sans-serif;
+    color: white;
+    align-content: center;
+    margin-right: 15%;
+    margin-left: 15%;
+}
+
+#navigation h1 {
+    padding-right: 40px;
+    padding-left: 20px;
+}
+
+#navigation a {
+    align-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration-line: none;
+    font-family: sans-serif;
+    color: white;
+}
+
+#navigation a:hover {
+    text-decoration-thickness: 3px;
+    text-underline-offset: 10px;
+    text-decoration-line: underline;
+    animation-name: underlineNavAnimation;
+    animation-duration: 2000ms;
+}
+
+.Login {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
