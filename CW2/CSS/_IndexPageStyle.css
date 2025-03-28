@@ -4,8 +4,6 @@ body {
     background-size: fill;
     align-content: center;
     display: grid;
-    max-width: 90%;
-    max-height: 90%;
     grid-auto-columns: 1fr; 
     grid-template-columns: 1fr 5fr 1fr; 
     grid-template-rows: 1fr 2fr 20fr 1fr; 
@@ -28,17 +26,19 @@ nav {
     border-radius: 5px;
 }
 
-.container{
+
+
+.container {
+    
+    display:grid;
     grid-column: 2;
     grid-row: 3;
-    display:grid;
     align-content: center;
     justify-content: center;
-    width:90%;
-    background-color: rgba(95, 92, 92, 0.75);
     justify-self: center;
+    background-color: rgba(77, 75, 75, 0.466);
     border-radius: 5px;
-    
+    width:90%;
 }
 
 .options {
@@ -92,6 +92,7 @@ nav {
     font-family: sans-serif;
     color: white;
     font-weight: bold;
+    font-size: large;
     padding-left: 2%;
 }
 
@@ -123,3 +124,15 @@ nav {
     height: 100px;
     position: absolute;
 }
+
+.welcomeInfo {
+    display:grid;
+    color: white;
+    font-family: sans-serif;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    position: relative;
+}
+
+
