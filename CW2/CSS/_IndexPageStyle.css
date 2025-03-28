@@ -93,4 +93,13 @@ nav {
     border-color:black;
     border-style: solid;
     position: relative;
+    overflow-x: clip;
+    
+}
+
+#image-scroller .scroll-image{
+    background-color: red; 
+    width: 150px; 
+    height: 100px;
+    position: absolute;
 }
