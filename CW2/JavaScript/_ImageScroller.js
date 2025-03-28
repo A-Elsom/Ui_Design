@@ -1,26 +1,21 @@
 //Scrolls images across on a banner for the webpage
 
-let images = [document.getElementsByClassName("scroll-image")];
-const imageContainer = document.getElementById("image-scroller");
+const images = document.getElementsByClassName("scroll-image");
 
-if(images.length > 0){
-    alert("images recieved");
-}else{
-    alert("no images");
-}
+const speed = 0.3;
 
-const speed = 2;
-const imageContainerStyle = getComputedStyle(imageContainer);
 function _scroll(){
-    alert("it ran");
+    let imageContainer = document.getElementById("image-scroller");
+    var imageContainerStyle = getComputedStyle(imageContainer);
     for(var i = 0; i < images.length; i++){
-        alert("1");
-        var imageStyle = getComputedStyle(images[i]);
-        //imageStyle.left -= speed;
-        
-        
-        if(imageStyle.left + imageContainerStyle.width < 0){
-            imageStyle.left = imageContainerStyle.width - (imageStyle.left + imageContainerStyle.width);
+        var image = images[i];
+        var imageStyle = getComputedStyle(image);
+        var imageWidth = imageStyle.width;
+        var imagePos = parseFloat(imageStyle.right, 10);
+        imagePos -= speed;
+        image.style.right = imagePos + "px";;
+        if(parseInt(imageContainerStyle.width,10) + imagePos < parseInt(imageContainerStyle.width,10)){
+            image.style.right = (parseInt(imageContainerStyle.width,10) - parseInt(imageStyle.width, 10)) + "px";
             i--;
         }
     };

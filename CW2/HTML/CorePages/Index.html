@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="../../CSS/_IndexPageStyle.css">
     </head>
     <body style="background-color: darkgrey;">
-        <script src="../../JavaScript/_ImageScroller.js" onload="_scroll()"></script>
+        
         <!-- navigation bar -->
         <nav id="navigation">
             <h1>Edinburgh Getaway</h1>
@@ -24,13 +24,13 @@
                 <h1>Looking for a weekend getaway?</h1>
                 <p>**write description**</p>
             </div>
-            <div class="image-scroller">
-                <img class="scroll-image" style="background-color: red; width: 75px; height: 75px;">
-                <img class="scroll-image" style="background-color: white; width: 75px; height: 75px;">
-                <img class="scroll-image" style="background-color: black; width: 75px; height: 75px;">
-                <img class="scroll-image" style="background-color: green; width: 75px; height: 75px;">
-                <img class="scroll-image" style="background-color: purple; width: 75px; height: 75px;">
-                <img class="scroll-image" style="background-color: yellow; width: 75px; height: 75px;">
+            <div id="image-scroller">
+                <img class="scroll-image" style="background-color: red; width: 75px; height: 75px;position: absolute;">
+                <img class="scroll-image" style="background-color: white; width: 75px; height: 75px;position: absolute;">
+                <img class="scroll-image" style="background-color: black; width: 75px; height: 75px;position: absolute;">
+                <img class="scroll-image" style="background-color: green; width: 75px; height: 75px;position: absolute;">
+                <img class="scroll-image" style="background-color: purple; width: 75px; height: 75px;position: absolute;">
+                <img class="scroll-image" style="background-color: yellow; width: 75px; height: 75px;position: absolute;">
             </div>
             <!-- Tiles that show attractions that are available around edinburgh -->
             <div class="options">
@@ -50,5 +50,6 @@
                 <a type="button" href="./Login.html">Login</a>
             </div>
         </div>
+        <script src="../../JavaScript/_ImageScroller.js" onload="_scroll()"></script>
     </body>
 </html>

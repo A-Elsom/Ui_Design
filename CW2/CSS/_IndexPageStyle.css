@@ -88,3 +88,9 @@ nav {
     align-items: center;
     justify-items: center;
 }
+
+#image-scroller {
+    border-color:black;
+    border-style: solid;
+    position: relative;
+}
