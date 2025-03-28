@@ -1,10 +1,20 @@
 body {
     background-color: darkgray;
     background-image: url("../Images/City_Background.jpeg");
-    background-size: cover;
+    background-size: fill;
     align-content: center;
     display: grid;
-    
+    max-width: 90%;
+    max-height: 90%;
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 5fr 1fr; 
+    grid-template-rows: 1fr 2fr 20fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        ". . ."
+        ". . ."
+        ". . ."
+        ". . ."; 
 }
 
 @keyframes underlineNavAnimation {
@@ -19,15 +29,16 @@ nav {
 }
 
 .container{
+    grid-column: 2;
+    grid-row: 3;
     display:grid;
     align-content: center;
     justify-content: center;
-    width: 83.5%;
-    
+    width:90%;
     background-color: rgba(95, 92, 92, 0.75);
-    padding: 40px;
     justify-self: center;
     border-radius: 5px;
+    
 }
 
 .options {
@@ -42,37 +53,46 @@ nav {
 }
 
 .options img {
-    box-shadow: 5px 5px 5px;
+    box-shadow: 5px 5px 5px 5px;
     border-radius: 3px;
 }
 
 #navigation{
-    display:flex;
+    grid-column: 2;
+    grid-row: 2;
+    display:grid;
     font-family: sans-serif;
     color: white;
+    align-self: center;
     align-content: center;
+    justify-self: center;
     border-bottom-style: solid;
     border-bottom-color:black;
     border-bottom-width: 5px;
-    margin-right: 5%;
-    margin-left: 5%;
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 1.5fr 3fr 1fr; 
+    width:90%;
 }
 
 #navigation h1 {
-    padding-right: 15%;
-    padding-left: 10%;
     text-transform: uppercase;
     text-shadow: 2px 2px black;
+    padding-left:1%;
+    grid-column: 2;
+}
+
+#linkContainer {
+    grid-column: 3;
+    align-content: center;
 }
 
 #navigation a {
     align-content: center;
-    padding-left: 10px;
-    padding-right: 10px;
     text-decoration-line: none;
     font-family: sans-serif;
     color: white;
     font-weight: bold;
+    padding-left: 2%;
 }
 
 #navigation a:hover {
