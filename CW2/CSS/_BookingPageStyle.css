@@ -1,0 +1,68 @@
+body {
+    background-color: darkgray;
+    background-image: url("../Images/City_Background.jpeg");
+    background-size: fill;
+    align-content: center;
+    display: grid;
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 5fr 1fr; 
+    grid-template-rows: 1fr 0.5fr 10fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        ". . ."
+        ". . ."
+        ". . ."
+        ". . ."; 
+}
+
+@keyframes underlineNavAnimation {
+    from {text-decoration-color: rgba(255, 255, 255, 0);}
+    to {text-decoration-color: rgba(255, 255, 255, 1);}
+}
+
+#navigation{
+    grid-column: 2;
+    grid-row: 2;
+    display:grid;
+    font-family: sans-serif;
+    color: white;
+    align-self: center;
+    align-content: center;
+    justify-self: center;
+    border-bottom-style: solid;
+    border-bottom-color:black;
+    border-bottom-width: 5px;
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 1.5fr 3fr 1fr; 
+    width:90%;
+}
+
+#navigation h1 {
+    text-transform: uppercase;
+    text-shadow: 2px 2px black;
+    padding-left:1%;
+    grid-column: 2;
+}
+
+#linkContainer {
+    grid-column: 3;
+    align-content: center;
+}
+
+#navigation a {
+    align-content: center;
+    text-decoration-line: none;
+    font-family: sans-serif;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    padding-left: 2%;
+}
+
+#navigation a:hover {
+    text-decoration-thickness: 3px;
+    text-underline-offset: 10px;
+    text-decoration-line: underline;
+    animation-name: underlineNavAnimation;
+    animation-duration: 2000ms;
+}

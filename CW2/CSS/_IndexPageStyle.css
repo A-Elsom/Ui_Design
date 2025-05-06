@@ -69,19 +69,18 @@ nav {
 }
 
 #Art.showOption {
-    animation: showOption 5s ease-in forwards;
-    animation-delay: 1s;
+    animation: showOption 3s ease-in forwards;
     
 }
 
 #History.showOption {
-    animation: showOption 5s ease-in forwards;
-    animation-delay: 3s;
+    animation: showOption 3s ease-in forwards;
+    animation-delay: 1s;
 }
 
 #Food.showOption {
-    animation: showOption 5s ease-in forwards;
-    animation-delay: 5s;
+    animation: showOption 3s ease-in forwards;
+    animation-delay: 2s;
 }
 
 #navigation{
@@ -134,8 +133,18 @@ nav {
 .Login {
     grid-column: 2;
     grid-row: 4;
-    display: flex;
     align-items: center;
+    justify-items: center;
+    justify-self: center;
+    font-family: sans-serif;
+    color: white;
+}
+
+.Login a {
+    color:aliceblue;
+    justify-self: center;
+    align-items: center;
+    align-self: center;
     justify-items: center;
 }
 
