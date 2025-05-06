@@ -21,40 +21,45 @@
                 <a id="userLogin" href="./Login.html">Login</a>
             </div>
         </nav>
+        
         <!-- Main page container -->
         <div class="container">
+            <div id="image-scroller">
+                <img class="scroll-image" />
+                <img class="scroll-image" />
+                <img class="scroll-image" />
+                <img class="scroll-image" />
+                <img class="scroll-image" />
+                <img class="scroll-image" />
+                <img class="scroll-image" />
+                <img class="scroll-image" />
+                <img class="scroll-image" />
+            </div>
             <!-- welcome information / hook -->
             <div class="welcomeInfo">
-                <h1 id="hook">Looking For A Weekend Getaway...</h1>
-                <p>**write description**</p>
+                <h1 id="hook">Plan A Weekend Getaway In Edinburgh</h1>
+                <p>Come treat yourself to a weekend away in Edinburgh, One of Britain's most historic cities</p>
             </div>
-            <div id="image-scroller">
-                <img class="scroll-image" >
-                <img class="scroll-image" >
-                <img class="scroll-image" >
-                <img class="scroll-image" >
-                <img class="scroll-image" >
-                <img class="scroll-image" >
-                <img class="scroll-image" >
-            </div>
+            
             <!-- Tiles that show attractions that are available around edinburgh -->
             <div class="options">
-                <div class="option" id="Art">
-                    <img width="150px" height="150px"></img>
+                <div class="option" id="Art" onload="">
+                    <img width="250px" height="250px"></img>
                 </div>
                 <div class="option" id="History">
-                    <img width="150px" height="150px"></img>
+                    <img width="250px" height="250px"></img>
                 </div>
                 <div class="option" id="Food">
-                    <img width="150px" height="150px"></img>
+                    <img width="250px" height="250px"></img>
                 </div>    
             </div>
             <!-- login page button -->
-            <div class="login">
+            <div class="Login">
                 <h2>Please Login To Start</h2>
                 <a type="button" href="./Login.html">Login</a>
             </div>
         </div>
         <script src="../../JavaScript/_ImageScroller.js" onload="_placeImages()"></script>
+        <script src="../../JavaScript/AnimateOptions.js" onload="fadeIn()"></script>
     </body>
 </html>

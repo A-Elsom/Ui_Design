@@ -4,7 +4,7 @@ const images = document.getElementsByClassName("scroll-image");
 let imageContainer = document.getElementById("image-scroller");
 let imageContainerStyle = getComputedStyle(imageContainer);
 
-const speed = 0.3;
+const speed = 0.2;
 
 function _placeImages(){
     var xPos = parseInt(imageContainerStyle.width, 10);

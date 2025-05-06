@@ -6,7 +6,7 @@ body {
     display: grid;
     grid-auto-columns: 1fr; 
     grid-template-columns: 1fr 5fr 1fr; 
-    grid-template-rows: 1fr 2fr 20fr 1fr; 
+    grid-template-rows: 1fr 0.5fr 10fr 1fr; 
     gap: 0px 0px; 
     grid-template-areas: 
         ". . ."
@@ -18,6 +18,11 @@ body {
 @keyframes underlineNavAnimation {
     from {text-decoration-color: rgba(255, 255, 255, 0);}
     to {text-decoration-color: rgba(255, 255, 255, 1);}
+}
+
+@keyframes showOption {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
 
 nav {
@@ -38,10 +43,16 @@ nav {
     justify-self: center;
     background-color: rgba(77, 75, 75, 0.466);
     border-radius: 5px;
+    grid-template-columns: 1fr 5fr 1fr; 
+    grid-template-rows: 1fr 2fr 2fr 1fr; 
     width:90%;
 }
 
 .options {
+    position: relative;
+    justify-self: center;
+    grid-column: 2;
+    grid-row: 3;
     display: flex;
     padding: 20px;
 }
@@ -49,12 +60,28 @@ nav {
 .options #Art, #History, #Food{
     padding-left: 40px;
     padding-right: 40px;
-    
+    opacity: 0;
 }
 
 .options img {
     box-shadow: 5px 5px 5px 5px;
     border-radius: 3px;
+}
+
+#Art.showOption {
+    animation: showOption 5s ease-in forwards;
+    animation-delay: 1s;
+    
+}
+
+#History.showOption {
+    animation: showOption 5s ease-in forwards;
+    animation-delay: 3s;
+}
+
+#Food.showOption {
+    animation: showOption 5s ease-in forwards;
+    animation-delay: 5s;
 }
 
 #navigation{
@@ -105,27 +132,34 @@ nav {
 }
 
 .Login {
+    grid-column: 2;
+    grid-row: 4;
     display: flex;
     align-items: center;
     justify-items: center;
 }
 
 #image-scroller {
+    grid-column: 2;
+    grid-row: 1;
+    grid-column-start: 1;
+    grid-column-end: 4;
     border-color:black;
     border-style: solid;
-    position: relative;
     overflow-x: clip;
-    
+    position: relative;
 }
 
 #image-scroller .scroll-image{
     background-color: red; 
-    width: 150px; 
-    height: 100px;
+    width: 12.52%; 
+    height: 150px;
     position: absolute;
 }
 
 .welcomeInfo {
+    grid-column: 2;
+    grid-row: 2;
     display:grid;
     color: white;
     font-family: sans-serif;
