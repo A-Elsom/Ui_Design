@@ -6,7 +6,7 @@ body {
     display: grid;
     grid-auto-columns: 1fr; 
     grid-template-columns: 1fr 5fr 1fr; 
-    grid-template-rows: 1fr 0.5fr 10fr 1fr; 
+    grid-template-rows: 1fr 4fr 1fr; 
     gap: 0px 0px; 
     grid-template-areas: 
         ". . ."
@@ -20,9 +20,30 @@ body {
     to {text-decoration-color: rgba(255, 255, 255, 1);}
 }
 
-#navigation{
+nav {
+    background-color: rgba(0, 0, 0,0.5);
+    font-family: serif;
+    border-radius: 5px;
+}
+
+.container {
+    
+    display:grid;
     grid-column: 2;
     grid-row: 2;
+    align-content: center;
+    justify-content: center;
+    justify-self: center;
+    background-color: rgba(77, 75, 75, 0.466);
+    border-radius: 5px;
+    grid-template-columns: 1fr 10fr 1fr; 
+    grid-template-rows: 0.11fr 5fr; 
+    width:90%;
+}
+
+#navigation{
+    grid-column: 2;
+    grid-row: 1;
     display:grid;
     font-family: sans-serif;
     color: white;
@@ -65,4 +86,105 @@ body {
     text-decoration-line: underline;
     animation-name: underlineNavAnimation;
     animation-duration: 2000ms;
+}
+
+#bookingView {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#eventBrowserContainer {
+    overflow-y: scroll;
+    width: 95%;
+    height: 90%;
+    max-height: 500px;
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+}
+
+#userNotLoggedInView {
+    visibility: collapse;
+}
+
+.dayBar {
+    text-align: center;
+    color:white;
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    margin-left: 10%;
+    margin-right: 10%
+}
+
+.dayEvents {
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+#eventsOverview {
+    text-align: center;
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    align-items: center;
+    justify-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    overflow-y: scroll;
+}
+
+hr {
+    width: 90%;
+    height: 1px;
+    color: black;
+    border-color: black;
+}
+
+#bookingType {
+    text-align: center;
+}
+
+#titleBar {
+    text-align: center;
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    color: white;
+    background-color: rgba(0, 0, 0,0.5);
+}
+
+#addEventSection {
+    text-align: center;
+}
+
+#eventBrowserContainer {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#eventError {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    color: white;
+}
+
+.FoodEvent {
+    color: white;
+}
+
+.FoodEvent h2{
+    
+}
+
+.Rating {
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    width: 70px;
+    height: 55px;
+    margin-left: 20px;
+    justify-content: center;
+    
 }

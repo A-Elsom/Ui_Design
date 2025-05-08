@@ -1,6 +1,6 @@
 <!Doctype html>
 <head>
-    <link rel="stylesheet" href="../../CSS/_IndexPageStyle.css">
+    <link rel="stylesheet" href="../../CSS/_BookingPageStyle.css">
 </head>
 <body>
     <!-- navigation bar -->
@@ -17,30 +17,245 @@
                 <a href="./TransportBooking.html">Transport</a>
                 <a id="userLogin" href="./Login.html">Login</a>
             </div>
-
+            <div id="UserId">
+                <p id="text">fjkdslaf</p>
+            </div>
         </nav>
-
-        <div id="UserId">
-            <p id="text"></p>
-        </div>
-
         <div class="container">
             <div id="userNotLoggedInView">
                 <p> Please Log In To Continue </p>
                 <a type="button" href="./Login.html">Login Page</a>
             </div>
             <div id="bookingView">
-                <button id="eventsView">Events</button>
-                <button id="AccommodationView">Accommodation</button>
-
-                <h1 id="titleBar"></h1>
-
+                <div id="bookingType">
+                    <button id="eventsView">Events</button>
+                    <button id="AccommodationView">Accommodation</button>
+                </div>
+                <h1 id="titleBar">Events</h1>
+                <!-- Events booking section -->
                 <div id="eventsOverview">
                     <!--show all the events the user has booked and offer a way to book -->
-                    <h1 class="dayBar">Friday</h1>
-                    <button class="addEvent"
-                    <h1 class="dayBar">Saturday</h1>
-                    <h1 class="dayBar">Sunday</h1>
+                    <div class="dayEvents">
+                        <h2 class="dayBar">Friday</h2>
+                        <button class="addEvent" id="fridayEvent"> addEvent </button>
+                        <hr>
+                    </div>
+                    <div class="dayEvents">
+                        <h2 class="dayBar">Saturday</h2>
+                        <button class="addEvent" id="satEvent"> addEvent </button>
+                        <hr>
+                    </div>
+                        <div class="dayEvents">
+                        <h2 class="dayBar">Sunday</h2>
+                        <button class="addEvent" id="sunEvent"> addEvent </button>
+                    </div>
+                </div>
+                
+                <div id="addEventSection">
+
+                    <h1 style="color:white; text-align: center; border-Style:solid; border-color: black; background-color: rgba(0, 0, 0,0.5);">Events Browser</h1>
+                    <select id="EventTypeSelector">
+                        <option id="default"> Event Type</option>
+                        <option id="Food">Food</option>
+                        <option id="History">History</option>
+                        <option id="Art">Art</option>
+                    </select>
+                    <select id="OrderByPriceSelector">
+                        <option id="default">Low To High</option>
+                        <option id="HtL">High To Low</option>
+                    </select>
+                    <p id="eventError">No Event type selected</p>
+
+                    <div id="eventBrowserContainer">
+                        
+                        <div class="FoodEvent" id="Event1">
+                            <h2>Restaurant 1</h2>
+                            <div class="Rating">
+                                <p>Rating</p>
+                            </div>
+                            <p class="price" id="e1Price">Price</p>
+                            <textarea>test</textarea>
+
+                            <div class="vl"></div>
+
+                            <img id="mainImageE1" class="mainImage">
+                            <img id="subImageE1_1" class="subImage">
+                            <img id="subImageE1_2" class="subImage">
+                            <img id="subImageE1_3" class="subImage">
+
+                            <select class="bookingTime">
+                                <option id="defaultTime">Select Time</option>
+                                <option>10:00</option>
+                                <option>12:30</option>
+                                <option>14:45</option>
+                            </select>
+
+                            <button>Choose Event</button>
+                        </div>
+
+                        <hr>
+
+                        <div class="FoodEvent" id="Event2">
+                            <h2>Restaurant 2</h2>
+                            <div class="Rating">
+                                <p>Rating</p>
+                            </div>
+                            <p id="e1Price">Price</p>
+                            <textarea>test</textarea>
+
+                            <div class="vl"></div>
+
+                            <img id="mainImageE1" class="mainImage">
+                            <img id="subImageE1_1" class="subImage">
+                            <img id="subImageE1_2" class="subImage">
+                            <img id="subImageE1_3" class="subImage">
+
+                            <select class="bookingTime">
+                                <option id="defaultTime">Select Time</option>
+                                <option>10:00</option>
+                                <option>12:30</option>
+                                <option>14:45</option>
+                            </select>
+
+                            <button>Choose Event</button>
+                        </div>
+
+                        <hr>
+
+                        <div class="FoodEvent" id="Event3">
+                            <h2>Restaurant 3</h2>
+                            <div class="Rating">
+                                <p>Rating</p>
+                            </div>
+                            
+                            <p id="e1Price">Price</p>
+                            <textarea>test</textarea>
+
+                            <div class="vl"></div>
+
+                            <img id="mainImageE1" class="mainImage">
+                            <img id="subImageE1_1" class="subImage">
+                            <img id="subImageE1_2" class="subImage">
+                            <img id="subImageE1_3" class="subImage">
+
+                            <select class="bookingTime">
+                                <option id="defaultTime">Select Time</option>
+                                <option>10:00</option>
+                                <option>12:30</option>
+                                <option>14:45</option>
+                            </select>
+
+                            <button>Choose Event</button>
+                        </div>
+
+                        <hr>
+
+                        <div class="HistoryEvent" id="Event4">
+                            <h2>Edinburgh Castle</h2>
+                            <div class="Rating">
+                                <p>Rating</p>
+                            </div>
+                            <p id="e1Price">Price</p>
+                            <textarea>test</textarea>
+
+                            <div class="vl"></div>
+
+                            <img id="mainImageE1" class="mainImage">
+                            <img id="subImageE1_1" class="subImage">
+                            <img id="subImageE1_2" class="subImage">
+                            <img id="subImageE1_3" class="subImage">
+
+                            <select class="bookingTime">
+                                <option id="defaultTime">Select Time</option>
+                                <option>10:00</option>
+                                <option>12:30</option>
+                                <option>14:45</option>
+                            </select>
+
+                            <button>Choose Event</button>
+                        </div>
+
+                        <hr>
+
+                        <div class="HistoryEvent" id="Event5">
+                            <h2>History Event 2</h2>
+                            <div class="Rating">
+                                <p>Rating</p>
+                            </div>
+                            <p id="e1Price">Price</p>
+                            <textarea>test</textarea>
+
+                            <div class="vl"></div>
+
+                            <img id="mainImageE1" class="mainImage">
+                            <img id="subImageE1_1" class="subImage">
+                            <img id="subImageE1_2" class="subImage">
+                            <img id="subImageE1_3" class="subImage">
+
+                            <select class="bookingTime">
+                                <option id="defaultTime">Select Time</option>
+                                <option>10:00</option>
+                                <option>12:30</option>
+                                <option>14:45</option>
+                            </select>
+
+                            <button>Choose Event</button>
+                        </div>
+
+                        <hr>
+
+                        <div class="ArtEvent" id="Event6">
+                            <h2>ArtEvent1</h2>
+                            <div class="Rating">
+                                <p>Rating</p>
+                            </div>
+                            <p id="e1Price">Price</p>
+                            <textarea>test</textarea>
+
+                            <div class="vl"></div>
+
+                            <img id="mainImageE1" class="mainImage">
+                            <img id="subImageE1_1" class="subImage">
+                            <img id="subImageE1_2" class="subImage">
+                            <img id="subImageE1_3" class="subImage">
+
+                            <select class="bookingTime">
+                                <option id="defaultTime">Select Time</option>
+                                <option>10:00</option>
+                                <option>12:30</option>
+                                <option>14:45</option>
+                            </select>
+
+                            <button>Choose Event</button>
+                        </div>
+
+                        <hr>
+
+                        <div class="ArtEvent" id="Event7">
+                            <h2>Art Event 2</h2>
+                            <div class="Rating">
+                                <p>Rating</p>
+                            </div>
+                            <p id="e1Price">Price</p>
+                            <textarea>test</textarea>
+
+                            <div class="vl"></div>
+
+                            <img id="mainImageE1" class="mainImage">
+                            <img id="subImageE1_1" class="subImage">
+                            <img id="subImageE1_2" class="subImage">
+                            <img id="subImageE1_3" class="subImage">
+
+                            <select class="bookingTime">
+                                <option id="defaultTime">Select Time</option>
+                                <option>10:00</option>
+                                <option>12:30</option>
+                                <option>14:45</option>
+                            </select>
+
+                            <button>Choose Event</button>
+                        </div>
+                    </div>
                 </div>
 
 
