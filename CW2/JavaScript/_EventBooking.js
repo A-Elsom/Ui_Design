@@ -5,6 +5,9 @@ let eventBrowser = document.getElementById("eventBrowserContainer");
 let artEvents = document.getElementsByClassName("ArtEvent");
 let foodEvents = document.getElementsByClassName("FoodEvent");
 let historyEvents = document.getElementsByClassName("HistoryEvent");
+var fridayEventsChosen = [];
+var saturdayEventsChosen = [];
+var sundayEventsChosen = [];
 var currentEventsCount = 0;
 
 //add event to day
@@ -112,7 +115,8 @@ function orderEvents(orderType){
 //userChoseEvent
 function addEvent(eventId){
     let currentEvent = document.getElementById(eventId);
-    let assignDay = document.getElementById(currentDay);
+    
+    let assignDay = document.getElementById(currentDay+ "EventBox");
     var eventName = currentEvent.getElementsByTagName("h2")[0].textContent;
     var eventTime;
     var tempTime;
@@ -123,29 +127,44 @@ function addEvent(eventId){
             break;
         }
     }
-    if(eventTime === "Select Time"){
-        //error handling
-        tempTime.style.borderColor = "red";
-        tempTime.style.borderWidth = "2px";
-        tempTime.style.boarderStyle = "solid";
+    if((currentDay === "fri" && fridayEventsChosen.includes(eventId) === true) ||
+    (currentDay === "sat" && saturdayEventsChosen.includes(eventId) === true) ||
+    (currentDay === "sun" && sundayEventsChosen.includes(eventId) === true)){
+        alert("cannot add event, event already exists");
     }else{
-        tempTime.style.borderColor = "none";
-        tempTime.style.borderWidth = "none";
-        tempTime.style.boarderStyle = "none";
-        var newEvent = document.createElement('DIV');
-        newEvent.id = currentEventsCount;
-        newEvent.className = "event";
-        currentEventsCount++;
-        var nameContainer = document.createElement("P");
-        var timeContainer = document.createElement("P");
-        nameContainer.textContent = eventName;
-        timeContainer.textContent = eventTime;
-        newEvent.appendChild(nameContainer);
-        newEvent.appendChild(timeContainer);
-        assignDay.appendChild(newEvent);
-        goBack();
+
+        if(eventTime === "Select Time"){
+            //error handling
+            tempTime.style.borderColor = "red";
+            tempTime.style.borderWidth = "2px";
+            tempTime.style.boarderStyle = "solid";
+        }else{
+            tempTime.style.borderColor = "none";
+            tempTime.style.borderWidth = "none";
+            tempTime.style.boarderStyle = "none";
+            var newEvent = document.createElement('DIV');
+            newEvent.id = currentEventsCount;
+            newEvent.className = "event";
+            currentEventsCount++;
+            var nameContainer = document.createElement("P");
+            var timeContainer = document.createElement("P");
+            nameContainer.className = "eventName";
+            timeContainer.className = "eventTime";
+            nameContainer.textContent = eventName;
+            timeContainer.textContent = eventTime;
+            newEvent.appendChild(nameContainer);
+            newEvent.appendChild(timeContainer);
+            assignDay.appendChild(newEvent);
+            if(currentDay === "fri"){
+                fridayEventsChosen.push(eventId);
+            }if (currentDay === "sat") {
+                saturdayEventsChosen.push(eventId);
+            } else {
+                sundayEventsChosen.push(eventId);
+            }
+            goBack();
+        }
     }
-    
 }
 
 //go back

@@ -37,16 +37,25 @@
                     <!--show all the events the user has booked and offer a way to book -->
                     <div class="dayEvents" id="fri">
                         <h2 class="dayBar">Friday</h2>
+                        <div class="eventBox" id="friEventBox">
+
+                        </div>
                         <button class="addEvent" id="fridayEvent" onclick="AddEvent_Friday()"> addEvent </button>
                         <hr>
                     </div>
                     <div class="dayEvents" id="sat">
                         <h2 class="dayBar">Saturday</h2>
+                        <div class="eventBox" id="satEventBox">
+
+                        </div>
                         <button class="addEvent" id="satEvent" onclick="AddEvent_Saturday()"> addEvent </button>
                         <hr>
                     </div>
                         <div class="dayEvents" id="sun">
                         <h2 class="dayBar">Sunday</h2>
+                        <div class="eventBox" id="sunEventBox">
+
+                        </div>
                         <button class="addEvent" id="sunEvent" onclick="AddEvent_Sunday()"> addEvent </button>
                     </div>
                 </div>
@@ -131,7 +140,7 @@
                                 <option>14:45</option>
                             </select>
 
-                            <button class="chooseEvent">Choose Event</button>
+                            <button class="chooseEvent" onclick="addEvent('Event2')" >Choose Event</button>
                         </div>
 
                         
@@ -164,7 +173,7 @@
                                 <option>14:45</option>
                             </select>
 
-                            <button class="chooseEvent">Choose Event</button>
+                            <button class="chooseEvent" onclick="addEvent('Event3')">Choose Event</button>
                         </div>
 
                         
@@ -197,7 +206,7 @@
                                 <option>14:45</option>
                             </select>
 
-                            <button class="chooseEvent">Choose Event</button>
+                            <button class="chooseEvent" onclick="addEvent('Event4')" >Choose Event</button>
                         </div>
 
                         
@@ -231,7 +240,7 @@
                                 <option>14:45</option>
                             </select>
 
-                            <button class="chooseEvent">Choose Event</button>
+                            <button class="chooseEvent" onclick="addEvent('Event5')" >Choose Event</button>
                         </div>
 
                         
@@ -264,7 +273,7 @@
                                 <option>14:45</option>
                             </select>
 
-                            <button class="chooseEvent">Choose Event</button>
+                            <button class="chooseEvent" onclick="addEvent('Event6')">Choose Event</button>
                         </div>
 
                         
@@ -297,7 +306,7 @@
                                 <option>14:45</option>
                             </select>
 
-                            <button class="chooseEvent">Choose Event</button>
+                            <button class="chooseEvent" onclick="addEvent('Event7')">Choose Event</button>
                         </div>
                         
                     </div>
