@@ -171,7 +171,7 @@ hr {
 #eventBrowserContainer {
     background-color: rgba(0, 0, 0, 0.2);
     align-self: center;
-    width:100%;
+    width:99%;
 }
 
 #eventError {

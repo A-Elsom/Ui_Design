@@ -54,11 +54,11 @@
                 <div id="addEventSection">
 
                     <h1 style="color:white; text-align: center; border-Style:solid; border-color: black; background-color: rgba(0, 0, 0,0.5);">Events Browser</h1>
-                    <select id="EventTypeSelector">
-                        <option id="default"> Event Type</option>
-                        <option id="Food">Food</option>
-                        <option id="History">History</option>
-                        <option id="Art">Art</option>
+                    <select id="EventTypeSelector" onchange="filterEventType(value)">
+                        <option value="All" id="default"> Event Type</option>
+                        <option value="food" id="Food">Food</option>
+                        <option value="history" id="History">History</option>
+                        <option value="art" id="Art">Art</option>
                     </select>
                     <select id="OrderByPriceSelector">
                         <option id="default">Low To High</option>
