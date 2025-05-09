@@ -5,6 +5,7 @@ let eventBrowser = document.getElementById("eventBrowserContainer");
 let artEvents = document.getElementsByClassName("ArtEvent");
 let foodEvents = document.getElementsByClassName("FoodEvent");
 let historyEvents = document.getElementsByClassName("HistoryEvent");
+var currentEventsCount = 0;
 
 //add event to day
 function AddEvent_Friday(){
@@ -101,10 +102,58 @@ function filterEventType(eventType){
 
 //order events by price
 function orderEvents(orderType){
+    if(orderType === "0"){
 
+    }else{
+
+    }
 }
 
 //userChoseEvent
 function addEvent(eventId){
+    let currentEvent = document.getElementById(eventId);
+    let assignDay = document.getElementById(currentDay);
+    var eventName = currentEvent.getElementsByTagName("h2")[0].textContent;
+    var eventTime;
+    var tempTime;
+    for(i = 0; i < currentEvent.childNodes.length; i++){
+        if(currentEvent.children[i].tagName === "SELECT"){
+            tempTime = currentEvent.children[i];
+            eventTime = tempTime.options[tempTime.selectedIndex].text;
+            break;
+        }
+    }
+    if(eventTime === "Select Time"){
+        //error handling
+        tempTime.style.borderColor = "red";
+        tempTime.style.borderWidth = "2px";
+        tempTime.style.boarderStyle = "solid";
+    }else{
+        tempTime.style.borderColor = "none";
+        tempTime.style.borderWidth = "none";
+        tempTime.style.boarderStyle = "none";
+        var newEvent = document.createElement('DIV');
+        newEvent.id = currentEventsCount;
+        newEvent.className = "event";
+        currentEventsCount++;
+        var nameContainer = document.createElement("P");
+        var timeContainer = document.createElement("P");
+        nameContainer.textContent = eventName;
+        timeContainer.textContent = eventTime;
+        newEvent.appendChild(nameContainer);
+        newEvent.appendChild(timeContainer);
+        assignDay.appendChild(newEvent);
+        goBack();
+    }
+    
+}
 
+//go back
+function goBack(){
+    currentDay = "";
+    document.getElementById("titleBar").style.visibility = "visible";
+    eventsOverview.style.visibility = "visible";
+    eventsOverview.style.display = "block";
+    addEventSection.style.visibility = "collapse";
+    eventBrowser.style.display = "none";
 }
