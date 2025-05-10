@@ -36,27 +36,36 @@
                     <input type="password" id="userPass_LInput" required placeholder="Enter Your Password">
                 </div>
                 <button id="loginButton" type="button" onClick="login()">Log In</button>
-                <p style="display:flex;width:fit-content;font-size: small;">Or Sign Up <button type="button" class = "signUpButton" onclick="">Sign Up</button></p>
+                <p style="display:flex;width:fit-content;font-size: small;">Or Sign Up <button type="button" class = "signUpButton" onclick="showSignUp()">Sign Up</button></p>
 
             <br>
             
         </div>
         </form>
-        <div id="signup_Container">
-            <h1>Please Sign Up</h1>
-            <form>
-                <label for="userEmail_S">Email : </label>
-                <input type="email" id="userEmail_S">
-                <label for="userPass_S">Password : </label>
-                <input type="password" id="userPass_S">
-                <button type="button" onClick="">Log In</button>
-            </form>
-            <p>Or Log in</p>
-            <button onclick="">Login Page</button>
-        </div>
+        <form>
+            <div id="signup_Container">
+                <h1>Please Sign Up</h1>
+                <div id="userEmail_S">
+                    <label for="userEmail_SInput" id="userEmailError" style="visibility: collapse; color:red;"></label>
+                    <input type="email" id="userEmail_SInput" required placeholder="Enter Your Email">
+                </div>
+                <div id="userPass_S">
+                    <label for="userPass_SInput" id="userPassError" style="visibility: collapse; color:red;"></label>
+                    <input type="password" id="userPass_SInput" required placeholder="Enter Your Password">
+                    <br>
+                    <label for="userPass_SInput1" id="userPassError1" style="visibility: collapse; color:red;"></label>
+                    <input type="password" id="userPass_SInput1" required placeholder="Re-Enter your password">
+                </div>
+                <button id="signupButton" type="button" onClick="signUp()">Create Account</button>
+                <p style="display:flex;width:fit-content;font-size: small;">Or log in <button type="button" class = "loginCButton" onclick="showLogin()">Log In</button></p>
+
+            </div>
+        </form>
+        
 
         <div id="loginSuccess">
             <p>Log in Successful</p>
+            <p id="accountCreated" style="visibility: hidden;">And Account Created</p>
         </div>
     </div>
 

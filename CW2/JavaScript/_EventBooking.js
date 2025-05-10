@@ -10,6 +10,39 @@ var saturdayEventsChosen = [];
 var sundayEventsChosen = [];
 var currentEventsCount = 0;
 
+
+if(sessionStorage.getItem("currentUser") != null){
+    document.getElementById("text").textContent = sessionStorage.getItem("currentUser");
+}
+
+if(sessionStorage.getItem("fridayEvents") === null){
+    sessionStorage.setItem("fridayEvents", JSON.stringify(fridayEventsChosen));
+}else{
+    fridayEventsChosen = JSON.parse(sessionStorage.getItem("fridayEvents"));
+    currentDay = "fri";
+    for(i = 0; i < fridayEventsChosen.length ; i++){
+        loadEvents(i);
+    }
+}
+if(sessionStorage.getItem("saturdayEvents") == null){
+    sessionStorage.setItem("saturdayEvents", JSON.stringify(saturdayEventsChosen));
+}else{
+    saturdayEventsChosen = JSON.parse(sessionStorage.getItem("saturdayEvents"));
+    currentDay = "sat";
+    for(i = 0; i < saturdayEventsChosen.length ; i++){
+        loadEvents(i);
+    }
+}
+if(sessionStorage.getItem("sundayEvents") == null){
+    sessionStorage.setItem("sundayEvents", JSON.stringify(sundayEventsChosen));
+}else{
+    sundayEventsChosen = JSON.parse(sessionStorage.getItem("sundayEvents"));
+    currentDay = "sun";
+    for(i = 0; i < sundayEventsChosen.length ; i++){
+        loadEvents(i);
+    }
+}
+
 //add event to day
 function AddEvent_Friday(){
     currentDay = "fri";
@@ -112,10 +145,41 @@ function orderEvents(orderType){
     }
 }
 
+function loadEvents(index){
+    var currentArray = [];
+    if(currentDay === "fri"){
+        currentArray = fridayEventsChosen;
+    }else if(currentDay === "sat"){
+        currentArray = saturdayEventsChosen;
+    }else{
+        currentArray = sundayEventsChosen;
+    }
+    var tempId = currentArray[index][0];
+    let currentEvent = document.getElementById(tempId);
+    let assignDay = document.getElementById(currentDay+ "EventBox");
+    var eventName = currentEvent.getElementsByTagName("h2")[0].textContent;
+    var eventTime;
+    
+    eventTime = currentArray[index][2];
+    eventName = currentArray[index][1];
+    var newEvent = document.createElement('DIV');
+    newEvent.id = currentEventsCount;
+    newEvent.className = "event";
+    currentEventsCount++;
+    var nameContainer = document.createElement("P");
+    var timeContainer = document.createElement("P");
+    nameContainer.className = "eventName";
+    timeContainer.className = "eventTime";
+    nameContainer.textContent = eventName;
+    timeContainer.textContent = eventTime;
+    newEvent.appendChild(nameContainer);
+    newEvent.appendChild(timeContainer);
+    assignDay.appendChild(newEvent);
+}
+
 //userChoseEvent
 function addEvent(eventId){
     let currentEvent = document.getElementById(eventId);
-    
     let assignDay = document.getElementById(currentDay+ "EventBox");
     var eventName = currentEvent.getElementsByTagName("h2")[0].textContent;
     var eventTime;
@@ -127,9 +191,9 @@ function addEvent(eventId){
             break;
         }
     }
-    if((currentDay === "fri" && fridayEventsChosen.includes(eventId) === true) ||
-    (currentDay === "sat" && saturdayEventsChosen.includes(eventId) === true) ||
-    (currentDay === "sun" && sundayEventsChosen.includes(eventId) === true)){
+    if((currentDay === "fri" && dayContainsEvent(eventId) === true) ||
+    (currentDay === "sat" && dayContainsEvent(eventId) === true) ||
+    (currentDay === "sun" && dayContainsEvent(eventId) === true)){
         alert("cannot add event, event already exists");
     }else{
 
@@ -156,15 +220,36 @@ function addEvent(eventId){
             newEvent.appendChild(timeContainer);
             assignDay.appendChild(newEvent);
             if(currentDay === "fri"){
-                fridayEventsChosen.push(eventId);
-            }if (currentDay === "sat") {
-                saturdayEventsChosen.push(eventId);
-            } else {
-                sundayEventsChosen.push(eventId);
+                fridayEventsChosen.push([eventId,eventName,eventTime]);
+                sessionStorage.setItem("fridayEvents", JSON.stringify(fridayEventsChosen));
+            }else if (currentDay === "sat") {
+                saturdayEventsChosen.push([eventId,eventName,eventTime]);
+                sessionStorage.setItem("saturdayEvents", JSON.stringify(saturdayEventsChosen));
+            }else {
+                sundayEventsChosen.push([eventId,eventName,eventTime]);
+                sessionStorage.setItem("sundayEvents", JSON.stringify(sundayEventsChosen));
             }
             goBack();
         }
     }
+}
+
+function dayContainsEvent(eventId){
+    var currentArray = [];
+    if(currentDay === "fri"){
+        currentArray = fridayEventsChosen;
+    }else if(currentDay === "sat"){
+        currentArray = saturdayEventsChosen;
+    }else{
+        currentArray = sundayEventsChosen;
+    }
+
+    for(i = 0; i < currentArray.length; i++){
+        if (currentArray[i][0] === eventId){
+            return true;
+        }
+    }
+    return false;
 }
 
 //go back
