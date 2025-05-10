@@ -23,18 +23,28 @@
     </nav>
 
     <div class="container">
+        <form>
         <div id="login_Container">
             <h1>Please Login</h1>
-            <form>
-                <label for="userEmail_L">Email : </label>
-                <input type="email" id="userEmail_L">
-                <label for="userPass_L">Password : </label>
-                <input type="password" id="userPass_L">
-                <button type="button" onClick="">Log In</button>
-            </form>
-            <p>Or Sign Up</p>
-            <button onclick="">Sign Up</button>
+            
+                <div id="userEmail_L">
+                    
+                    <input type="email" id="userEmail_LInput" required placeholder="Enter Your Email">
+                </div>
+                <div id="userPass_L">
+                    
+                    <input type="password" id="userPass_LInput" required placeholder="Enter Your Password">
+                </div>
+                
+                <button id="loginButton" type="button" onClick="">Log In</button>
+            
+                <p style="display:flex;width:fit-content;font-size: small;">Or Sign Up <button type="button" class = "signUpButton" onclick="">Sign Up</button></p>
+            
+            
+            <br>
+            
         </div>
+        </form>
         <div id="signup_Container">
             <h1>Please Sign Up</h1>
             <form>

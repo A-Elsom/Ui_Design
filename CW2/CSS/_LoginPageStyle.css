@@ -40,7 +40,7 @@ nav {
     background-color: rgba(77, 75, 75, 0.466);
     border-radius: 5px;
     grid-template-columns: 1fr 1fr 1fr; 
-    grid-template-rows: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 3fr 1fr; 
     width:90%;
 }
 
@@ -92,9 +92,14 @@ nav {
 }
 
 #login_Container {
-    grid-column: 2;
-    grid-row: 2;
-    background-color: white;
+    position: relative;
+    
+    align-content: center;
+    justify-content: center;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5px;
     border-color: black;
     border-style:solid;
@@ -102,18 +107,102 @@ nav {
     display:grid;
     grid-auto-columns: 1fr; 
     grid-template-columns: 1fr 3fr 1fr; 
-    grid-template-rows: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 2fr 1fr 1fr 1fr 0.5fr 0.5fr; 
     gap: 0px 0px; 
+    margin-left: 10%;
+    margin-right: 10%;
     grid-template-areas: 
+        ". . ."
+        ". . ."
         ". . ."
         ". . ."
         ". . ."
         ". . ."; 
 }
+#login_Container h1 {
+    border-radius: 5px;
+   
+    justify-self: center;
+    align-self: center;
+    padding: 10px;
+    border-width:2px;
+    grid-column:2;
+    grid-row:1;
+    
+}
+form{
+    grid-column: 2;
+    grid-row: 2;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
 
-#login_Container #userEmail_L {
+#userEmail_L {
+    justify-self: center;
+    align-self: center;
+    grid-column: 2;
+    grid-row: 2;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+}
+
+#userEmail_L input{
+    
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#userPass_L{
+    justify-self: center;
+    align-self: center;
     grid-column: 2;
     grid-row: 3;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#userPass_L input{
+    
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#login_Container button {
+    position: relative;
+    align-self: center;
+    justify-self: center;
+}
+
+#loginButton{
+    grid-row: 4;
+    grid-column: 2;
+    width:50%;
+    height:50%;
+    cursor: grab;
+}
+
+#login_Container p{
+    position:relative;
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+    grid-row: 5;
+    grid-column: 2;
+    height:fit-content;
+    width:fit-content;
+}
+
+.signUpButton {
+    width:fit-content;
+    color:blue;
+    text-decoration-line: underline;
+    cursor: grab;
+    height:75%;
+    padding-bottom: 2%;
+    background-color: transparent;
+    border-style: none;
 }
 
 #signup_Container {
