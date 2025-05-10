@@ -71,6 +71,32 @@ function AddEvent_Sunday(){
     eventBrowser.style.display = "grid";
 }
 
+function chooseAccom(accomId){
+    var chosenAccom = document.getElementById(accomId);
+    let chosenAccomDiv = document.getElementById("showAccomChoice");
+    let accomBrowser = document.getElementById("accomodationBrowser");
+    let accomName = document.getElementById("accomName");
+    let accomPrice = document.getElementById("accomPrice");
+    var accomArray = [accomId, accomName, accomPrice]
+    sessionStorage.setItem("currentAccomChoice", JSON.stringify(accomArray));
+    chosenAccomDiv.style.display = "flex";
+    chosenAccomDiv.style.visibility = "visible";
+    accomBrowser.style.visibility = "collapse";
+    accomBrowser.style.display = "none";
+    accomName.textContent = chosenAccom.getElementsByTagName("h2")[0].textContent;
+    accomPrice.textContent = "n/a";
+}
+
+function changeAccom(){
+    let chosenAccomDiv = document.getElementById("showAccomChoice");
+    let accomBrowser = document.getElementById("accomodationBrowser");
+    chosenAccomDiv.style.display = "none";
+    chosenAccomDiv.style.visibility = "collapse";
+    accomBrowser.style.display = "Grid";
+    accomBrowser.style.visibility = "visible";
+    sessionStorage.removeItem("currentAccomChoice");
+}
+
 //choose event for day
 
 //filter the different events
@@ -250,6 +276,44 @@ function dayContainsEvent(eventId){
         }
     }
     return false;
+}
+
+function showAccommodationView(){
+    var eventView = document.getElementById("eventsOverview");
+    var accomView = document.getElementById("accomodationView");
+    eventView.style.display = "none";
+    eventView.style.visibility = "collapse";
+    accomView.style.display = "block";
+    accomView.style.visibility = "visible";
+    if(sessionStorage.getItem("currentAccomChoice") === "{}"){
+        accomView.style.display = "block";
+        accomView.style.visibility = "visible";
+    }else{
+        //show chosen accomodation
+        var accomId = JSON.parse(sessionStorage.getItem("currentAccomChoice"))[0]
+        alert(accomId);
+        var chosenAccom = document.getElementById(accomId);
+        let chosenAccomDiv = document.getElementById("showAccomChoice");
+        let accomBrowser = document.getElementById("accomodationBrowser");
+        let accomName = document.getElementById("accomName");
+        let accomPrice = document.getElementById("accomPrice");
+        chosenAccomDiv.style.display = "flex";
+        chosenAccomDiv.style.visibility = "visible";
+        accomBrowser.style.visibility = "collapse";
+        accomBrowser.style.display = "none";
+        accomName.textContent = chosenAccom.getElementsByTagName("h2")[0].textContent;
+        accomPrice.textContent = "n/a";
+    }
+}
+
+
+function showEventView(){
+    var eventView = document.getElementById("eventsOverview");
+    var accomView = document.getElementById("accomodationView");
+    accomView.style.display = "none";
+    accomView.style.visibility = "collapse";
+    eventView.style.display = "block";
+    eventView.style.visibility = "visible";
 }
 
 //go back

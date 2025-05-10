@@ -26,14 +26,79 @@
                 <p> Please Log In To Continue </p>
                 <a type="button" href="./Login.html">Login Page</a>
             </div>
+
+            
+
             <div id="bookingView">
                 <div id="bookingType">
-                    <button id="eventsView">Events</button>
-                    <button id="AccommodationView">Accommodation</button>
+                    <button id="eventsView" onclick="showEventView()">Events</button>
+                    <button id="AccommodationView" onclick="showAccommodationView()">Accommodation</button>
                 </div>
-                <h1 id="titleBar">Events</h1>
+                
+                <div id="accomodationView">
+                    <h1 style="color:white; text-align: center; border-Style:solid; border-color: black; background-color: rgba(0, 0, 0,0.5);">Events Browser</h1>
+                    <select id="OrderByPriceSelector">
+                        <option id="default">Low To High</option>
+                        <option id="HtL">High To Low</option>
+                    </select>
+                    <div id="showAccomChoice">
+                        <p id="accomName"></p>
+                        <p id="accomPrice"></p>
+                        <button type="button" onclick="changeAccom()" id="changeAccomButton">Change Accommodation</button>
+                    </div>
+                    <div id="accomodationBrowser">
+                        <div class="accomodationOption" id="Accom1">
+                            <h2>Accommodation 1</h2>
+                            <div class="Rating">
+                                <p>Rating</p>
+                            </div>
+                            <div class="Price">
+                                <p id="e1Price">price</p>
+                            </div>
+                            <div class="description">
+                                <p>test</p>
+                            </div>
+    
+                            <div class="vl"></div>
+    
+                            <img id="mainImageE1" class="mainImage">
+                            <div class="subImageSection">
+                                <img id="subImageE1_1" class="subImage subImage1">
+                                <img id="subImageE1_2" class="subImage subImage2">
+                                <img id="subImageE1_3" class="subImage subImage3">
+                            </div>
+    
+                            <button class="chooseAccommodation" onclick="chooseAccom('Accom1')">Choose Accommodation</button>
+                        </div>
+
+                        <div class="accomodationOption" id="Accom2">
+                            <h2>Accommodation 2</h2>
+                            <div class="Rating">
+                                <p>Rating</p>
+                            </div>
+                            <div class="Price">
+                                <p id="e1Price">price</p>
+                            </div>
+                            <div class="description">
+                                <p>test</p>
+                            </div>
+    
+                            <div class="vl"></div>
+    
+                            <img id="mainImageE1" class="mainImage">
+                            <div class="subImageSection">
+                                <img id="subImageE1_1" class="subImage subImage1">
+                                <img id="subImageE1_2" class="subImage subImage2">
+                                <img id="subImageE1_3" class="subImage subImage3">
+                            </div>
+    
+                            <button class="chooseAccommodation" onclick="chooseAccom('Accom2')">Choose Accommodation</button>
+                        </div>
+                    </div>
+                </div>
                 <!-- Events booking section -->
                 <div id="eventsOverview">
+                    <h1 id="titleBar">Events</h1>
                     <!--show all the events the user has booked and offer a way to book -->
                     <div class="dayEvents" id="fri">
                         <h2 class="dayBar">Friday</h2>
