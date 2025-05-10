@@ -220,3 +220,22 @@ form{
         ". . ."
         ". . ."; 
 }
+
+#loginSuccess {
+    visibility: collapse;
+    position: relative;
+    align-content: center;
+    justify-content: center;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    border-radius: 5px;
+    border-color: grey;
+    background-color: rgba(255, 255, 255, 0.3);
+    height:50%;
+    width:75%;
+    border-style:solid;
+    border-width:2px;
+    grid-row: 2;
+    grid-column: 2;
+}
