@@ -4,7 +4,7 @@ var password = "1234";
 function login(){
     let checkEmail = document.getElementById("userEmail_LInput");
     let checkPass = document.getElementById("userPass_LInput");
-    alert(checkEmail.value);
+    
     if(email === checkEmail.value && checkPass.value === password){
         document.getElementById("text").textContent = checkEmail.value;
         checkPass.style.borderColor = "transparent";
@@ -13,16 +13,13 @@ function login(){
         document.getElementById("login_Container").style.visibility = "collapse";
         document.getElementById("loginSuccess").style.visibility = "visible";
         document.getElementById("accountCreated").style.visibility = "hidden";
-        sessionStorage.setItem('currentUser', checkEmail)
+        sessionStorage.setItem('currentUser', JSON.stringify(checkEmail.value));
     }else{
-        if(!(email === checkEmail.value)){
+        if(!(email === checkEmail.value) || !(password === checkPass.value)){
             checkEmail.style.borderColor = "red";
-        }else{
-            checkEmail.style.borderColor = "transparent";
-        }
-        if(!(password === checkPass.value)){
             checkPass.style.borderColor = "red";
         }else{
+            checkEmail.style.borderColor = "transparent";
             checkPass.style.borderColor = "transparent";
         }
     }

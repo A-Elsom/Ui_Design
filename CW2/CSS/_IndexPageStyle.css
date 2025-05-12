@@ -26,6 +26,7 @@ body {
 }
 
 nav {
+    min-width:1635px;
     background-color: rgba(0, 0, 0,0.5);
     font-family: serif;
     border-radius: 5px;
@@ -34,7 +35,7 @@ nav {
 
 
 .container {
-    
+    min-width:1635px;
     display:grid;
     grid-column: 2;
     grid-row: 3;
@@ -44,7 +45,7 @@ nav {
     background-color: rgba(77, 75, 75, 0.466);
     border-radius: 5px;
     grid-template-columns: 1fr 5fr 1fr; 
-    grid-template-rows: 1fr 2fr 2fr 1fr; 
+    grid-template-rows: 1fr 1fr 2fr 1fr; 
     width:90%;
 }
 
@@ -153,6 +154,7 @@ nav {
     grid-row: 1;
     grid-column-start: 1;
     grid-column-end: 4;
+    
     border-color:black;
     border-style: solid;
     overflow-x: clip;
@@ -178,4 +180,7 @@ nav {
     position: relative;
 }
 
-
+h2 {
+    color:white;
+    text-align: center;
+}

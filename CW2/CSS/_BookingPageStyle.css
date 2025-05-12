@@ -7,7 +7,7 @@ body {
     display: grid;
     grid-auto-columns: 1fr; 
     grid-template-columns: 1fr 5fr 1fr; 
-    grid-template-rows: 1fr 4fr 1fr; 
+    grid-template-rows: 1fr 10fr 1fr; 
     gap: 0px 0px; 
     grid-template-areas: 
         ". . ."
@@ -16,18 +16,62 @@ body {
         ". . ."; 
 }
 
+button {
+    background-color: rgba(77, 75, 75, 0.35);
+    padding:5px;
+    color:white;
+    text-shadow: 2px 2px black;
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    cursor: pointer;
+}
+
+select {
+    
+    background-color: rgba(255, 255, 255, 0.35);
+    padding:5px;
+    color:white;
+    text-shadow: 2px 2px black;
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    cursor: pointer;
+}
+
+#image-scroller {
+    grid-column: 2;
+    grid-row: 1;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    
+    border-color:black;
+    border-style: solid;
+    overflow-x: clip;
+    position: relative;
+}
+
+#image-scroller .scroll-image{
+    background-color: red; 
+    width: 12.52%; 
+    height: 150px;
+    position: absolute;
+}
+
 @keyframes underlineNavAnimation {
     from {text-decoration-color: rgba(255, 255, 255, 0);}
     to {text-decoration-color: rgba(255, 255, 255, 1);}
 }
 
 nav {
+    min-width:1635px;
     background-color: rgba(0, 0, 0,0.5);
     font-family: serif;
     border-radius: 5px;
 }
 
 .container {
+    min-width:1635px;
     border-style: solid;
     border-width: 2px;
     border-color: grey;
@@ -383,6 +427,7 @@ hr {
 }
 
 .HistoryEvent .description {
+    color:black;
     position: inherit;
     background-color: aliceblue;
     width: 400px;
@@ -427,6 +472,7 @@ hr {
 }
 
 .ArtEvent .description {
+    color:black;
     position: inherit;
     background-color: aliceblue;
     width: 400px;

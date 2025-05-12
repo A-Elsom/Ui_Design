@@ -12,7 +12,9 @@ var currentEventsCount = 0;
 
 
 if(sessionStorage.getItem("currentUser") != null){
-    document.getElementById("text").textContent = sessionStorage.getItem("currentUser");
+    document.getElementById("text").textContent = JSON.parse(sessionStorage.getItem("currentUser"));
+}else{
+    document.getElementById("text").textContent = "Guest";
 }
 
 if(sessionStorage.getItem("fridayEvents") === null){
@@ -77,14 +79,15 @@ function chooseAccom(accomId){
     let accomBrowser = document.getElementById("accomodationBrowser");
     let accomName = document.getElementById("accomName");
     let accomPrice = document.getElementById("accomPrice");
-    var accomArray = [accomId, accomName, accomPrice]
-    sessionStorage.setItem("currentAccomChoice", JSON.stringify(accomArray));
+   
     chosenAccomDiv.style.display = "flex";
     chosenAccomDiv.style.visibility = "visible";
     accomBrowser.style.visibility = "collapse";
     accomBrowser.style.display = "none";
-    accomName.textContent = chosenAccom.getElementsByTagName("h2")[0].textContent;
-    accomPrice.textContent = "n/a";
+    accomName.textContent = chosenAccom.getElementsByTagName("H2")[0].textContent;
+    accomPrice.textContent = chosenAccom.getElementsByTagName("P")[1].textContent;
+    var accomArray = [accomId, accomName.textContent, accomPrice.textContent];
+    sessionStorage.setItem("currentAccomChoice", JSON.stringify(accomArray));
 }
 
 function changeAccom(){
@@ -279,6 +282,7 @@ function dayContainsEvent(eventId){
 }
 
 function showAccommodationView(){
+    goBack();
     var eventView = document.getElementById("eventsOverview");
     var accomView = document.getElementById("accomodationView");
     eventView.style.display = "none";
@@ -302,12 +306,13 @@ function showAccommodationView(){
         accomBrowser.style.visibility = "collapse";
         accomBrowser.style.display = "none";
         accomName.textContent = chosenAccom.getElementsByTagName("h2")[0].textContent;
-        accomPrice.textContent = "n/a";
+        accomPrice.textContent = accomPrice.textContent;
     }
 }
 
 
 function showEventView(){
+    goBack();
     var eventView = document.getElementById("eventsOverview");
     var accomView = document.getElementById("accomodationView");
     accomView.style.display = "none";
